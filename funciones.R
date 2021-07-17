@@ -28,3 +28,9 @@ lista_de_tablas <- magrittr::set_names(lista_de_tablas, nombre_tablas)
 for (i in names(lista_de_tablas)) {
   assign(paste0("df_", i), lista_de_tablas[[i]])
 }
+
+
+# Comprobamos en el dataframe que variable tiene NA ----
+fun_NA_df <- function(dataframe){
+  sapply(dataframe, function(x) sum(is.na(x)))
+}
